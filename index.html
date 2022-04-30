@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <article>
+        <div class="container">
+            <div id="quiz-container" class="quiz-container">
+                <header>
+                    <h1 class="question-text" id="question-text">
+                       <!-- insert by js -->
+                    </h1>
+                </header>
+                <section>
+                    <div class="anwsers-container" id="anwsers-container">
+                        <!-- insert by js -->
+                        <div id="anwser-a" class="anwser"></div>
+                        <div id="anwser-b" class="anwser"></div>
+                        <div id="anwser-c" class="anwser"></div>
+                        <div id="anwser-d" class="anwser"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="question-ended" id="question-ended">
+            <h1>Koniec pytań</h1>
+            <h1 id="score-display">Twój wynik:</h1>
+            <div id="reload-btn" class="reload-btn">Jeszcze raz?</div>
+        </div>
+        <div class="start-game" id="start-game">
+            <div id="start-game-btn" class="start-game-btn">Zacznij gre</div>
+        </div>
+    </article>
+</body>
+
+</html>

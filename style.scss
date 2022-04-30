@@ -1,0 +1,84 @@
+@mixin flex-centered() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+}
+body {
+	margin: 0;
+}
+.container {
+	background: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+	width: 100vw;
+	height: 100vh;
+	@include flex-centered();
+}
+.quiz-container {
+	width: 500px;
+	background-color: #fff;
+	border-radius: 80px;
+	@include flex-centered();
+	flex-direction: column;
+	padding: 40px;
+}
+.question-text {
+	padding: 25px;
+	text-align: center;
+	font-size: 1.6rem;
+	margin: 0;
+}
+.anwsers-container {
+	padding: 30px;
+	@include flex-centered();
+	flex-direction: column;
+}
+
+.anwser {
+	text-align: center;
+	padding: 25px;
+	width: 450px;
+	font-size: 1.2rem;
+	border-radius: 25px;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	border: 1px solid #222;
+	margin: 5px;
+	&:hover{
+		background-color: #ddd;
+	}
+}
+.question-ended {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+	position: fixed;
+	top: 0;
+	left: 0;
+	@include flex-centered();
+	flex-direction: column;
+	display: none;
+}
+.reload-btn {
+	@extend .anwser;
+	background-color: #fff;
+}
+.start-game {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
+	position: fixed;
+	top: 0;
+	left: 0;
+	@include flex-centered();
+	flex-direction: column;
+	display: flex;
+}
+.start-game-btn {
+	@extend .anwser;
+	background-color: #fff;
+}
