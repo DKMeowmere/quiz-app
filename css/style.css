@@ -70,7 +70,7 @@ body {
           flex-direction: column;
 }
 
-.anwser, .reload-btn, .start-game-btn {
+.anwser, .reload-btn, .start-game-btn, .category {
   text-align: center;
   padding: 25px;
   width: 450px;
@@ -83,7 +83,7 @@ body {
   margin: 5px;
 }
 
-.anwser:hover, .reload-btn:hover, .start-game-btn:hover {
+.anwser:hover, .reload-btn:hover, .start-game-btn:hover, .category:hover {
   background-color: #ddd;
 }
 
@@ -141,5 +141,31 @@ body {
 
 .start-game-btn {
   background-color: #fff;
+}
+
+.category-container {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  max-width: 1000px;
+}
+
+.category {
+  background-color: #fff;
+  width: 300px;
+  font-size: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

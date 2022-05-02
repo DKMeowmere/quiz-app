@@ -9,7 +9,9 @@ const reloadBtn = document.querySelector("#reload-btn");
 const startGame = document.querySelector("#start-game");
 const startGameBtn = document.querySelector("#start-game-btn");
 const scoreDisplay = document.querySelector("#score-display");
+const categoryContainer = document.querySelector("#category-container");
 const questionsTimeOut = 2000;
+//each category
 const geographyQuestions = [
 	[
 		(anwser = {
@@ -71,7 +73,7 @@ const geographyQuestions = [
 		(question = "Największe z tych państw to:"),
 	],
 
-    [
+	[
 		(anwser = {
 			anwser: "0",
 			true: false,
@@ -178,7 +180,7 @@ const geographyQuestions = [
 		}),
 		(anwser = {
 			anwser: "Islandia",
-			true:  true,
+			true: true,
 		}),
 		(anwser = {
 			anwser: "Nowa Szkocja",
@@ -198,7 +200,7 @@ const geographyQuestions = [
 		}),
 		(anwser = {
 			anwser: "Afryce",
-			true:  false,
+			true: false,
 		}),
 		(anwser = {
 			anwser: "Ameryce Północnej",
@@ -218,7 +220,7 @@ const geographyQuestions = [
 		}),
 		(anwser = {
 			anwser: "Holandią",
-			true:  true,
+			true: true,
 		}),
 		(anwser = {
 			anwser: "Belgią",
@@ -238,7 +240,7 @@ const geographyQuestions = [
 		}),
 		(anwser = {
 			anwser: "41",
-			true:  false,
+			true: false,
 		}),
 		(anwser = {
 			anwser: "48",
@@ -251,35 +253,121 @@ const geographyQuestions = [
 		(question = "USA skała się z ? stanów."),
 	],
 ];
+const norseQuestions = [
+	[
+		(anwser = {
+			anwser: "Florydy",
+			true: true,
+		}),
+		(anwser = {
+			anwser: "Islandii",
+			true: false,
+		}),
+		(anwser = {
+			anwser: "Grendandii",
+			true: false,
+		}),
+		(anwser = {
+			anwser: "Nowej Funlandii",
+			true: false,
+		}),
+		(question = "Wikingowie nie dopłyneli do:"),
+	],
 
+	[
+		(anwser = {
+			anwser: "Przez szczury",
+			true: true,
+		}),
+		(anwser = {
+			anwser: "W walce",
+			true: false,
+		}),
+		(anwser = {
+			anwser: "Przez tortury",
+			true: false,
+		}),
+		(anwser = {
+			anwser: "Przez Jadowite węże",
+			true: true,
+		}),
+		(question = "Jak zginął Ragnar Lotbrok:"),
+	],
+];
+//categories list
+const categories = [
+	{
+		name: "Geografia",
+		variableName: geographyQuestions,
+	},
+	{
+		name: "Wikingowie i mitologia nordycka",
+		variableName: norseQuestions,
+	},
+];
+let userCategory = "";
 let questionNumber = 0;
-
-let randomQuestionNumber = Math.floor(Math.random() * geographyQuestions.length);
+let randomQuestionNumber;
 
 window.onload = startGameFunction();
 
 function startGameFunction() {
-	startGameBtn.addEventListener("click", () => (startGame.style.display = "none"));
+	//disable start btn
+	startGameBtn.style.cursor = "not-allowed";
+	let selectedCategory = false;
+
+	//create category button for each category
+	categories.forEach((category) => {
+		const categoryDescripton = document.createTextNode(category.name);
+		const div = document.createElement("div");
+		div.classList.add("category");
+		div.appendChild(categoryDescripton);
+		categoryContainer.appendChild(div);
+
+		//change color to clicked div and clear for all divs
+		div.addEventListener("click", (e) => {
+			const categoryBtns = document.querySelectorAll(".category");
+			categoryBtns.forEach((btn) => (btn.style.backgroundColor = ""));
+			div.style.backgroundColor = "#ccc";
+
+			//set category
+			userCategory = category.variableName;
+
+			//enable start btn
+			startGameBtn.style.cursor = "pointer";
+			selectedCategory = true;
+
+			//create random number and change variable globally
+			let randomNumber = Math.floor(Math.random() * userCategory.length);
+			randomQuestionNumber = randomNumber;
+		});
+	});
+
+	startGameBtn.addEventListener("click", () => {
+		if (selectedCategory) {
+			startGame.style.display = "none";
+			insertQuestions(randomQuestionNumber);
+		}
+	});
+	//add click event for every anwser
 	anwsers.forEach((anwser) => {
 		anwser.addEventListener("click", () => checkTrueAnwser(anwser));
 	});
-
-	insertQuestions(randomQuestionNumber);
 }
 
 function insertQuestions(randomQuestionNumber) {
-	if (geographyQuestions.length === 0) {
+	if (userCategory.length === 0) {
 		endOfQuestionsDiv.style.display = "flex";
-        scoreDisplay.innerText = ` Twój wynik: ${score}`
+		scoreDisplay.innerText = ` Twój wynik: ${score}`;
 		return;
 	}
 
 	questionNumber++;
-	questionTest.innerText = `Pytanie ${questionNumber}: ${geographyQuestions[randomQuestionNumber][4]}`;
-	anwserA.innerText = `A: ${geographyQuestions[randomQuestionNumber][0].anwser}`;
-	anwserB.innerText = `B: ${geographyQuestions[randomQuestionNumber][1].anwser}`;
-	anwserC.innerText = `C: ${geographyQuestions[randomQuestionNumber][2].anwser}`;
-	anwserD.innerText = `D: ${geographyQuestions[randomQuestionNumber][3].anwser}`;
+	questionTest.innerText = `Pytanie ${questionNumber}: ${userCategory[randomQuestionNumber][4]}`;
+	anwserA.innerText = `A: ${userCategory[randomQuestionNumber][0].anwser}`;
+	anwserB.innerText = `B: ${userCategory[randomQuestionNumber][1].anwser}`;
+	anwserC.innerText = `C: ${userCategory[randomQuestionNumber][2].anwser}`;
+	anwserD.innerText = `D: ${userCategory[randomQuestionNumber][3].anwser}`;
 }
 let disableClicking;
 let score = 0;
@@ -298,7 +386,7 @@ function checkTrueAnwser(anwser) {
 	if (anwser.id === "anwser-c") clickedBtn = 2;
 	if (anwser.id === "anwser-d") clickedBtn = 3;
 
-	if (geographyQuestions[randomQuestionNumber][clickedBtn].true === true) {
+	if (userCategory[randomQuestionNumber][clickedBtn].true === true) {
 		anwser.style.backgroundColor = "#0f0";
 		score++;
 
@@ -313,10 +401,10 @@ function checkTrueAnwser(anwser) {
 		}, questionsTimeOut);
 	}
 	// remove current question from array
-	geographyQuestions.splice(randomQuestionNumber, 1);
+	userCategory.splice(randomQuestionNumber, 1);
 
 	setTimeout(() => {
-		randomQuestionNumber = Math.floor(Math.random() * geographyQuestions.length);
+		randomQuestionNumber = Math.floor(Math.random() * userCategory.length);
 		insertQuestions(randomQuestionNumber);
 	}, questionsTimeOut);
 }

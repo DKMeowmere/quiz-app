@@ -82,3 +82,16 @@ body {
 	@extend .anwser;
 	background-color: #fff;
 }
+.category-container{
+	margin: 20px;
+	@include flex-centered();
+	flex-wrap: wrap;
+	flex-direction: row;
+	max-width: 1000px;
+}
+.category{
+	@extend .anwser;
+	background-color: #fff;
+	width: 300px;
+	font-size: 1rem;
+}
