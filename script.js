@@ -325,7 +325,7 @@ function startGameFunction() {
 		categoryContainer.appendChild(div);
 
 		//change color to clicked div and clear for all divs
-		div.addEventListener("click", (e) => {
+		div.addEventListener("click", () => {
 			const categoryBtns = document.querySelectorAll(".category");
 			categoryBtns.forEach((btn) => (btn.style.backgroundColor = ""));
 			div.style.backgroundColor = "#ccc";
