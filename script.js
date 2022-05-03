@@ -252,6 +252,25 @@ const geographyQuestions = [
 		}),
 		(question = "USA skała się z ? stanów."),
 	],
+	[
+		(anwser = {
+			anwser: "Norwegia",
+			true: false,
+		}),
+		(anwser = {
+			anwser: "Finlandia",
+			true: true,
+		}),
+		(anwser = {
+			anwser: "Islandia",
+			true: false,
+		}),
+		(anwser = {
+			anwser: "Dania",
+			true: false,
+		}),
+		(question = "Do krajów skandynawskich nie należy"),
+	],
 ];
 const norseQuestions = [
 	[
