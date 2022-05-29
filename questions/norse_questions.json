@@ -1,0 +1,16 @@
+[
+	[
+		{ "anwser": "Florydy", "true": true },
+		{ "anwser": "Islandii", "true": false },
+		{ "anwser": "Grendandii", "true": false },
+		{ "anwser": "Nowej Funlandii", "true": false },
+		"Wikingowie nie dopłyneli do:"
+	],
+	[
+		{ "anwser": "Przez szczury", "true": true },
+		{ "anwser": "W walce", "true": false },
+		{ "anwser": "Przez tortury", "true": false },
+		{ "anwser": "Przez Jadowite węże", "true": true },
+		"Jak zginął Ragnar Lotbrok:"
+	]
+]

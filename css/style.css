@@ -10,7 +10,7 @@ body {
   margin: 0;
 }
 
-.container {
+.container, .loading-container {
   background: -webkit-gradient(linear, left top, right top, from(#74ebd5), to(#9face6));
   background: linear-gradient(90deg, #74ebd5 0%, #9face6 100%);
   width: 100vw;
@@ -24,6 +24,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 .quiz-container {
@@ -70,7 +71,7 @@ body {
           flex-direction: column;
 }
 
-.anwser, .reload-btn, .start-game-btn, .category {
+.anwser, .category, .start-game-btn, .reload-btn {
   text-align: center;
   padding: 25px;
   width: 450px;
@@ -82,8 +83,7 @@ body {
   border: 1px solid #222;
   margin: 5px;
 }
-
-.anwser:hover, .reload-btn:hover, .start-game-btn:hover, .category:hover {
+.anwser:hover, .category:hover, .start-game-btn:hover, .reload-btn:hover {
   background-color: #ddd;
 }
 
@@ -137,6 +137,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   display: flex;
+  display: none;
 }
 
 .start-game-btn {
@@ -168,4 +169,12 @@ body {
   width: 300px;
   font-size: 1rem;
 }
-/*# sourceMappingURL=style.css.map */
+
+.loading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.loading-container h1 {
+  font-size: 3rem;
+}/*# sourceMappingURL=style.css.map */

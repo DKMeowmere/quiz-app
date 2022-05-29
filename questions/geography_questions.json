@@ -1,0 +1,93 @@
+[
+	[
+		{ "anwser": "Montana", "true": true },
+		{ "anwser": "Oregon", "true": false },
+		{ "anwser": "California", "true": false },
+		{ "anwser": "North Dakota", "true": false },
+		"4 pod względem wielkości stan USA to:"
+	],
+	[
+		{ "anwser": "1", "true": false },
+		{ "anwser": "2", "true": true },
+		{ "anwser": "3", "true": false },
+		{ "anwser": "4", "true": false },
+		"Liczba państw \"double landlocked\" to:"
+	],
+	[
+		{ "anwser": "Papua Nowa Gwinea", "true": false },
+		{ "anwser": "Szwecja", "true": false },
+		{ "anwser": "Paragwaj", "true": false },
+		{ "anwser": "Jemen", "true": true },
+		"Największe z tych państw to:"
+	],
+	[
+		{ "anwser": "0", "true": false },
+		{ "anwser": "2", "true": false },
+		{ "anwser": "3", "true": true },
+		{ "anwser": "5", "true": false },
+		"Liczba państw z którymi graniczy Togo to:"
+	],
+	[
+		{ "anwser": "Sudanu Południowego", "true": true },
+		{ "anwser": "Czadu", "true": false },
+		{ "anwser": "Beninu", "true": false },
+		{ "anwser": "Somalii", "true": false },
+		"Dżuba to stolica:"
+	],
+	[
+		{ "anwser": "Irlandii", "true": false },
+		{ "anwser": "Anglii", "true": true },
+		{ "anwser": "Szkocji", "true": false },
+		{ "anwser": "Walii", "true": false },
+		"Białe klify Dover znajdują się w:"
+	],
+	[
+		{ "anwser": "350 545 km²", "true": false },
+		{ "anwser": "410 451 km²", "true": false },
+		{ "anwser": "312 780 km²", "true": false },
+		{ "anwser": "298 128 km²", "true": true },
+		"Powierzchnia Alp to:"
+	],
+	[
+		{ "anwser": "Monako", "true": false },
+		{ "anwser": "Portugalii", "true": false },
+		{ "anwser": "Andory", "true": true },
+		{ "anwser": "Hiszpanii", "true": false },
+		"Język kataloński to oficjalny język:"
+	],
+	[
+		{ "anwser": "Irlandia", "true": false },
+		{ "anwser": "Islandia", "true": true },
+		{ "anwser": "Nowa Szkocja", "true": false },
+		{ "anwser": "Cejlon", "true": false },
+		"Największa z tych wysp to:"
+	],
+	[
+		{ "anwser": "Azji", "true": false },
+		{ "anwser": "Afryce", "true": false },
+		{ "anwser": "Ameryce Północnej", "true": false },
+		{ "anwser": "Ameryce Południowej", "true": true },
+		"Patagonia to region w:"
+	],
+	[
+		{ "anwser": "Luksemburgiem", "true": false },
+		{ "anwser": "Holandią", "true": true },
+		{ "anwser": "Belgią", "true": false },
+		{ "anwser": "Szwajcarią", "true": false },
+		"Francja nie graniczy z:"
+	],
+	[
+		{ "anwser": "33", "true": false },
+		{ "anwser": "41", "true": false },
+		{ "anwser": "48", "true": false },
+		{ "anwser": "50", "true": true },
+		"USA skała się z ? stanów."
+	],
+	[
+		{ "anwser": "Norwegia", "true": false },
+		{ "anwser": "Finlandia", "true": true },
+		{ "anwser": "Islandia", "true": false },
+		{ "anwser": "Dania", "true": false },
+		"Do krajów skandynawskich nie należy"
+	]
+]
